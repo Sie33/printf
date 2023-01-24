@@ -25,5 +25,6 @@ int c_spec(va_list fmt);
 int d_spec(va_list fmt);
 int i_spec(va_list fmt);
 int s_spec(va_list fmt);
+int is_spec(char c);
 
 #endif

@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdarg.h>
 /**
@@ -12,9 +13,10 @@
 */
 int _printf(const char *format, ...)
 {
+int result;
 va_list fmt;
 va_start(fmt, format);
-int result = fmt_spec(format, fmt);
+result = fmt_spec(format, fmt);
 va_end(fmt);
 return (result);
 }
