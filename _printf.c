@@ -5,9 +5,9 @@
  */
 int _printf(const char *format, ...)
 {
-va_list args;
-va_start(args, format);
-int result = fmt_spec(format, args);
-va_end(args);
+va_list fmt;
+va_start(fmt, format);
+int result = fmt_spec(format, fmt);
+va_end(fmt);
 return result;
 }
