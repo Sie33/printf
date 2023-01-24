@@ -1,13 +1,20 @@
 #include <stdio.h>
 #include <stdarg.h>
 /**
-* write a output to stdout from the format string FOMART
- */
+* _printf - prints anything
+*
+* @format: the format string
+*
+* first argument for the _printf , format
+* fmt_spec contains the specifiers for the result
+*
+* return : result
+*/
 int _printf(const char *format, ...)
 {
 va_list fmt;
 va_start(fmt, format);
 int result = fmt_spec(format, fmt);
 va_end(fmt);
-return result;
+return (result);
 }
