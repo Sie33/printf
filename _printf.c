@@ -8,7 +8,7 @@
 * first argument for the _printf , format
 * fmt_spec contains the specifiers for the result
 *
-* return : result
+* Return: number of characters to description
 */
 int _printf(const char *format, ...)
 {
