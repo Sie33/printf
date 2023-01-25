@@ -43,3 +43,45 @@ int s_spec(va_list fmt)
 	length += _putchar(')');
 	return (length);
 }
+
+/**
+ * d_spec - fetches an integer from va_list
+ * @fmt: va_list array
+ *
+ * Return: the int on success
+ */
+int d_spec(va_list fmt)
+{
+	int num = va_arg(fmt, int);
+	int power10;
+	int length, placeval, numcpy;
+
+	power10 = 1;
+	length = 0;
+	if (num != 0)
+	{
+		if (num < 0)
+		{
+			length += _putchar('-');
+			num = num * (-1);
+		}
+		numcpy = num;
+		while (numcpy / 10 != 0)
+		{
+			power10 *= 10;
+			numcpy = numcpy / 10;
+		}
+		while (power10 != 0)
+		{
+			placeval = num / power10;
+			if (placeval < 0)
+				placeval = -placeval;
+			length += _putchar('0' + placeval);
+			num = num % power10;
+			power10 = power10 / 10;
+		}
+		return (length);
+	}
+	length += _putchar('0');
+	return (length);
+}
